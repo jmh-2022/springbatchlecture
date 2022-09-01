@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: mariadb
+
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: mariadb
+  datasource:
+      url: jdbc:mariadb://127.0.0.1:3306/springbatch
+      username: springbatch
+      password: springbatch
+      driverClassName: org.mariadb.jdbc.Driver
+  batch:
+    jdbc:
+      initialize-schema: always
+    job:
+      enabled: false
+  output:
+    ansi:
+      enabled: always
+
+
